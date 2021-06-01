@@ -306,6 +306,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OneDayChallenge.Data\OneDayChallenge.Data.csproj">
+      <Project>{8f50760e-d1fa-4d36-89ca-8e80e6a0d874}</Project>
+      <Name>OneDayChallenge.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneDayChallenge.Models\OneDayChallenge.Models.csproj">
+      <Project>{065e9a7e-7c15-4f20-afaa-a79bf9ba8c7d}</Project>
+      <Name>OneDayChallenge.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneDayChallenge.Services\OneDayChallenge.Services.csproj">
+      <Project>{60b9ef33-7c1a-4e69-a6f2-eefffaac57f8}</Project>
+      <Name>OneDayChallenge.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
