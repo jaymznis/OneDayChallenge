@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using OneDayChallenge.Web.API.Providers;
 using OneDayChallenge.Web.API.Models;
+using OneDayChallenge.Data;
 
 namespace OneDayChallenge.Web.API
 {
