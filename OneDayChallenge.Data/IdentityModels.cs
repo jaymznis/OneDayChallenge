@@ -36,7 +36,7 @@ namespace OneDayChallenge.Data
 
         public DbSet<Comment> Comments { get; set; }
 
-        public DbSet<Reply> Replys { get; set; }
+        public DbSet<Reply> Replies { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
