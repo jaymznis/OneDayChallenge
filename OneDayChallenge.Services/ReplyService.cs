@@ -8,43 +8,43 @@ using System.Threading.Tasks;
 
 namespace OneDayChallenge.Services
 {
-    public class CommentService
+    public class ReplyService
     {
         private readonly Guid _authorId;
 
-        public CommentService(Guid authorId)
+        public ReplyService(Guid authorId)
         {
             _authorId = authorId;
         }
 
-        public bool CreateComment(CommentCreate model)
+        public bool CreateReply(ReplyCreate model)
         {
 
-            var ent = new Comment()
+            var ent = new Reply()
             {
-                PostId = model.PostId,
+                CommentId = model.CommentId,
                 AuthorId = _authorId,
                 Text = model.Text
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Comments.Add(ent);
+                ctx.Replies.Add(ent);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<GetComments> GetCommentsById(int id)
+        public IEnumerable<GetReply> GetRepliesById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx
-                    .Comments
-                    .Where(e => e.PostId == id && e.AuthorId == _authorId)
+                    .Replies
+                    .Where(e => e.CommentId == id && e.AuthorId == _authorId)
                     .Select
                     (
-                            e => new GetComments
+                            e => new GetReply
                             {
-                                CommentId = e.Id,
+                                ReplyId = e.Id,
                                 AuthorId = e.AuthorId,
                                 Text = e.Text
                             }

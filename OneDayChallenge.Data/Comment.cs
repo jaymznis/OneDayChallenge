@@ -13,6 +13,10 @@ namespace OneDayChallenge.Data
         [Key]
         public int Id { get; set; }
 
+        [ForeignKey(nameof(PostId))]
+        public virtual Post Post { get; set; } //not in data table
+        public int PostId { get; set; }
+
         [Required]
         public string Text { get; set; }
 
@@ -21,8 +25,6 @@ namespace OneDayChallenge.Data
 
         public virtual List<Reply> Replies { get; set; } //not in data table
 
-        [ForeignKey(nameof(Post))]
-        public int PostId { get; set; }
-        public virtual Post Post { get; set; } //not in data table
+
     }
 }

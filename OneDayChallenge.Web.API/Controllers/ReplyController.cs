@@ -11,31 +11,31 @@ using System.Web.Http;
 namespace OneDayChallenge.Web.API.Controllers
 {
     [Authorize]
-    public class CommentController : ApiController
+    public class ReplyController : ApiController
     {
-        private CommentService CreateCommentService()
+        private ReplyService CreateReplyService()
         {
             var authorId = Guid.Parse(User.Identity.GetUserId());
-            var commentService = new CommentService(authorId);
-            return commentService;
+            var replyService = new ReplyService(authorId);
+            return replyService;
         }
 
         public IHttpActionResult Get(int id)
         {
-            
-            CommentService commentService = CreateCommentService();
-            var comments = commentService.GetCommentsById(id);
-            return Ok(comments);
+
+            ReplyService replyService = CreateReplyService();
+            var replies = replyService.GetRepliesById(id);
+            return Ok(replies);
         }
 
-        public IHttpActionResult Post(CommentCreate comment)
+        public IHttpActionResult Post(ReplyCreate reply)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateCommentService();
+            var service = CreateReplyService();
 
-            if (!service.CreateComment(comment))
+            if (!service.CreateReply(reply))
                 return InternalServerError();
 
             return Ok();

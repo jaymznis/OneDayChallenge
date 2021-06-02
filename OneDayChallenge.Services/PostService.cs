@@ -12,6 +12,8 @@ namespace OneDayChallenge.Services
     {
         private readonly Guid _authorId;
 
+        public PostService() { }
+
         public PostService(Guid authorId)
         {
             _authorId = authorId;
@@ -51,6 +53,23 @@ namespace OneDayChallenge.Services
                             }
                     );
                 return query.ToArray();
+            }
+        }
+
+        public Post GetPostById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Posts
+                    .Single(e => e.Id == id && e.AuthorId == _authorId);
+                return new Post
+                {
+                    Id = entity.Id,
+                    AuthorId = _authorId,
+                    Title = entity.Title,
+                    Text = entity.Text
+                };
             }
         }
 

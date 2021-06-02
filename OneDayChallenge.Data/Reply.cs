@@ -13,9 +13,9 @@ namespace OneDayChallenge.Data
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey(nameof(Comment))]
-        public int CommentId { get; set; }
+        [ForeignKey(nameof(CommentId))]
         public virtual Comment Comment { get; set; }
+        public int CommentId { get; set; }
 
         [Required]
         public string Text { get; set; }
