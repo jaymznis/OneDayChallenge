@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using OneDayChallenge.Data;
 using OneDayChallenge.Web.API.Models;
 using OneDayChallenge.Web.API.Providers;
 using OneDayChallenge.Web.API.Results;
