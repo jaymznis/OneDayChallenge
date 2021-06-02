@@ -9,6 +9,7 @@ namespace OneDayChallenge.Models
     public class GetAllPosts
     {
         public int PostId { get; set; }
+        public Guid AuthorId { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
     }

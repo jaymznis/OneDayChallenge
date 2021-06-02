@@ -45,6 +45,7 @@ namespace OneDayChallenge.Services
                             e => new GetAllPosts
                             {
                                 PostId = e.Id,
+                                AuthorId = e.AuthorId,
                                 Title = e.Title,
                                 Text = e.Text
                             }
