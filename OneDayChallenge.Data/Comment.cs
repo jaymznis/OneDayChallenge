@@ -19,10 +19,10 @@ namespace OneDayChallenge.Data
         [Required]
         public Guid AuthorId { get; set; }
 
-        public virtual List<Reply> Replies { get; set; }
+        public virtual List<Reply> Replies { get; set; } //not in data table
 
         [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
-        public virtual Post Post { get; set; }
+        public virtual Post Post { get; set; } //not in data table
     }
 }
