@@ -21,7 +21,7 @@ namespace OneDayChallenge.Data
 
         public virtual List<Reply> Replies { get; set; }
 
-        [ForeignKey(nameof(Post.Id))]
+        [ForeignKey(nameof(Post))]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
     }

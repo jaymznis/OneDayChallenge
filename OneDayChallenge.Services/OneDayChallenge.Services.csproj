@@ -58,11 +58,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OneDayChallenge.Data\OneDayChallenge.Data.csproj">
+      <Project>{8f50760e-d1fa-4d36-89ca-8e80e6a0d874}</Project>
+      <Name>OneDayChallenge.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneDayChallenge.Models\OneDayChallenge.Models.csproj">
+      <Project>{065e9a7e-7c15-4f20-afaa-a79bf9ba8c7d}</Project>
+      <Name>OneDayChallenge.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
